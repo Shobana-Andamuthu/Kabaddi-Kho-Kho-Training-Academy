@@ -25,8 +25,15 @@
   .footer-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
-  .section{padding:64px 0}
+  .section{padding:88px 0 64px}
   .split{grid-template-columns:1fr;gap:32px}
+}
+@media (max-width:900px){
+  .js-anim .rv.rv-left,.js-anim .rv.rv-right,.reveal-left{transform:translateY(34px)}
+  .js-anim .rv.rv-left.rv-in,.js-anim .rv.rv-right.rv-in,.reveal-left.in{transform:none}
+  [dir="rtl"].js-anim .rv.rv-left,[dir="rtl"].js-anim .rv.rv-right{transform:translateY(34px)}
+  [dir="rtl"].js-anim .rv.rv-left.rv-in,[dir="rtl"].js-anim .rv.rv-right.rv-in{transform:none}
+  .reveal-left img{transform:scale(1)}
 }
 @media (max-width:640px){
   .grid-4,.grid-3{grid-template-columns:1fr}
@@ -34,6 +41,7 @@
   .hero-stats{gap:22px}
   .hero-actions .btn{flex:1 1 100%}
   .hero-home{padding:56px 0}
+  .hero-home h1{font-size:clamp(1.85rem,8vw,2.6rem)}
   .event{flex-direction:column}
   .event-date{flex-basis:auto;flex-direction:row;gap:10px;padding:12px}
   .brand small{display:none}
@@ -106,16 +114,26 @@
   .dash-main{padding:22px 16px 40px}
 }
 @media (max-width:900px){.dgrid{grid-template-columns:minmax(0,1fr)}}
-@media (max-width:640px){.kpis{grid-template-columns:minmax(0,1fr)}.user-chip span{display:none}.user-chip{padding:4px}.profile-grid{grid-template-columns:minmax(0,1fr)}.dash-top .container{padding-inline:12px}.dash-title h1{font-size:1.8rem}}
+@media (max-width:640px){.kpis{grid-template-columns:minmax(0,1fr)}.user-chip{display:none}.profile-grid{grid-template-columns:minmax(0,1fr)}.dash-top .container{padding-inline:12px}.dash-title h1{font-size:1.8rem}}
 /* Ultra-narrow fixes for auth, dashboard, FAQ */
 .faq{grid-template-columns:minmax(0,1fr)}
 .faq summary{overflow-wrap:anywhere}
+@media (max-width:420px){.dash-top .brand-logo{height:36px}}
 @media (max-width:280px){
   .auth-nav .container,.dash-top .container{padding-inline:8px;gap:6px}
+  .dash-top .brand-logo{height:26px}
+  .dash-top .icon-btn{width:36px;height:36px}
+  .dash-top .btn-logout{width:36px;height:36px}
   .auth-nav .brand>span:last-child,.dash-top .brand>span:last-child,.user-chip{display:none}
   .auth-nav .nav-tools,.dash-tools,.dash-tools .nav-tools{gap:4px}
   .auth-nav .icon-btn,.dash-top .icon-btn{width:36px;height:36px}
   .faq details{padding:0 14px}
+}
+@media (max-width:220px){
+  .dash-top{height:auto;min-height:var(--nav-h)}
+  .dash-top .container{height:auto;min-height:var(--nav-h);flex-direction:column;justify-content:center;padding-block:6px}
+  .dash-top .brand-logo{height:30px}
+  .dash-top .icon-btn,.dash-top .btn-logout{width:32px;height:32px}
 }
 @media (max-width:640px){.btn-logout{width:44px;padding:0}.btn-logout span{display:none}}
 @media (max-width:280px){.dash-tools .btn-logout{width:36px;height:36px}}
